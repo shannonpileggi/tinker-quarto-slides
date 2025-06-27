@@ -14,10 +14,10 @@ $font-family-sans-serif: 'Rubik', sans-serif;
 
 $body-bg: map-get($colors, "beige");
 $link-color: map-get($colors, "pink");
-$code-color: map-get($colors, "brightblue");
+$code-color: map-get($colors, "pink");
 $body-color: map-get($colors, "darkblue");
-$code-block-bg: map-get($colors, "seagreen");
-$presentation-heading-color: map-get($colors, "brightblue");
+$code-block-bg: map-get($colors, "brightblue");
+$presentation-heading-color: map-get($colors, "seagreen");
 $selected-text-color: map-get($colors, "pink");
 
 @each $name, $color in $colors {
@@ -47,30 +47,6 @@ $selected-text-color: map-get($colors, "pink");
   }
   a:hover {
     color: lighten($link-color, 25%);
-  }
-}
-
-.theme-slide1 {
-  position: relative;
-  z-index: 0;
-
-  h2 {
-    color: map-get($colors, "brightblue");
-  }
-
-  &:is(.slide-background) {
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('../../../../../img/slide_01.jpg');
-      @include background-full;
-      opacity: 0.2;
-      z-index: -1;
-    }
   }
 }
 
