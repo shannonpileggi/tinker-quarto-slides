@@ -1,0 +1,119 @@
+$colors: (
+  "beige": #FAE6CD,
+  "brightblue": #48AFDA,
+  "seagreen": #6DBBAD,
+  "marigold": #FFDD5D,
+  "pink": #F85E94,
+  "darkblue": #13234B,
+  "white": #FEFEFE
+);
+
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+$font-family-sans-serif: 'Rubik', sans-serif;
+
+$body-bg: map-get($colors, "beige");
+$link-color: map-get($colors, "pink");
+$code-color: map-get($colors, "brightblue");
+$body-color: map-get($colors, "darkblue");
+$code-block-bg: map-get($colors, "seagreen");
+$presentation-heading-color: map-get($colors, "brightblue");
+$selected-text-color: map-get($colors, "pink");
+
+@each $name, $color in $colors {
+  .text-#{$name} {
+    color: $color;
+  }
+
+  .bg-#{$name} {
+    background-color: $color;
+  }
+}
+
+/*-- scss:rules --*/
+
+@mixin background-full {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.footer {
+  p {
+    color: map-get($colors, "brightblue");
+  }
+  a {
+    color: lighten($link-color, 15%);
+  }
+  a:hover {
+    color: lighten($link-color, 25%);
+  }
+}
+
+.theme-slide1 {
+  position: relative;
+  z-index: 0;
+
+  h2 {
+    color: map-get($colors, "brightblue");
+  }
+
+  &:is(.slide-background) {
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('../../../../../img/slide_01.jpg');
+      @include background-full;
+      opacity: 0.2;
+      z-index: -1;
+    }
+  }
+}
+
+
+@mixin background-full {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@mixin theme-section($number) {
+  .theme-section#{$number} {
+    &:is(.slide-background) {
+      background-image: url('../../../../../img/slide_#{$number}.jpg');
+      @include background-full;
+    }
+  }
+}
+
+@for $i from 1 through 12 {
+  @include theme-section($i);
+}
+
+
+@mixin theme-slide($number) {
+  .theme-slide#{$number} {
+    &:is(.slide-background) {
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('../../../../../img/slide_#{$number}.jpg');
+        @include background-full;
+        opacity: 0.2;
+        z-index: -1;
+    }
+    }
+  }
+}
+
+@for $i from 1 through 12 {
+  @include theme-slide($i);
+}
