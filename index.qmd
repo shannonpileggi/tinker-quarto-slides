@@ -98,6 +98,8 @@ This is a footer with a link: [https://wwww.google.com](https://wwww.google.com)
 
 :::
 
+# Section 5 {.theme-section5 .center}
+
 ## Slide 5 {.theme-slide5}
 
 This is some regular text, and this is some **bold text**, and  [this](https://google.com) is a hyperlink. This is some `inline_code`.
@@ -118,7 +120,7 @@ This is a footer with a link: [https://wwww.google.com](https://wwww.google.com)
 
 :::
 
-# Section 3 {.theme-section3 .center}
+# Section 6 {.theme-section6 .center}
 
 ## Slide 6 {.theme-slide6}
 
